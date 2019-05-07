@@ -6,7 +6,7 @@ namespace fizzbuzz.tests
     public class Tests
     {
         [Fact]
-        public void Test1()
+        public void ShouldReturnNumber()
         {
             var program = new Program();
             var actual = program.GetPrintedList();
@@ -16,12 +16,26 @@ namespace fizzbuzz.tests
             Assert.Equal("2", actual[1]);
             Assert.Equal("4", actual[3]);
             Assert.Equal("7", actual[6]);
+        }
 
+        [Fact]
+        public void ShouldReturnFizzIfTheNumberIsDivisibleByThree()
+        {
+            var program = new Program();
+            var actual = program.GetPrintedList();
+            
             Assert.Equal("Fizz", actual[2]);
             Assert.Equal("Fizz", actual[5]);
             Assert.Equal("Fizz", actual[8]);
             Assert.Equal("Fizz", actual[11]);
             Assert.Equal("Fizz", actual[17]);
+        }
+        
+        [Fact]
+        public void ShouldReturnBuzzIfTheNumberIsDivisibleByFive()
+        {
+            var program = new Program();
+            var actual = program.GetPrintedList();
             
             Assert.Equal("Buzz", actual[4]);
             Assert.Equal("Buzz", actual[9]);
@@ -29,6 +43,13 @@ namespace fizzbuzz.tests
             Assert.Equal("Buzz", actual[24]);
             Assert.Equal("Buzz", actual[49]);
             Assert.Equal("Buzz", actual[99]);
+        }
+        
+        [Fact]
+        public void ShouldReturnFizzBuzzIfTheNumberIsDivisibleByThreeAndFive()
+        {
+            var program = new Program();
+            var actual = program.GetPrintedList();
             
             Assert.Equal("FizzBuzz", actual[14]);
             Assert.Equal("FizzBuzz", actual[29]);

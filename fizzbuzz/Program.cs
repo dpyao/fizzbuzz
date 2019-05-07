@@ -21,7 +21,12 @@ namespace fizzbuzz
 
             for (var i = 1; i <= 100; i++)
             {
-                printedList.Add(i % 3 == 0 ? "Fizz" : i.ToString());
+                var printStr = i.ToString();
+
+                if (i % 3 == 0) printStr = "Fizz";
+                if (i % 5 == 0) printStr = "Buzz";
+
+                printedList.Add(printStr);
             }
             return printedList;
         }

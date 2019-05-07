@@ -9,7 +9,7 @@ namespace fizzbuzz.tests
         public void ShouldReturnNumber()
         {
             var program = new Program();
-            var actual = program.GetPrintedList();
+            var actual = Program.GetPrintedList();
 
             Assert.Equal(100, actual.Count);
             Assert.Equal("1", actual[0]);
@@ -22,7 +22,7 @@ namespace fizzbuzz.tests
         public void ShouldReturnFizzIfTheNumberIsDivisibleByThreeOrItHasThree()
         {
             var program = new Program();
-            var actual = program.GetPrintedList();
+            var actual = Program.GetPrintedList();
             
             Assert.Equal("Fizz", actual[2]);
             Assert.Equal("Fizz", actual[5]);
@@ -36,10 +36,10 @@ namespace fizzbuzz.tests
         }
         
         [Fact]
-        public void ShouldReturnBuzzIfTheNumberIsDivisibleByFive()
+        public void ShouldReturnBuzzIfTheNumberIsDivisibleByFiveOrItHasFive()
         {
             var program = new Program();
-            var actual = program.GetPrintedList();
+            var actual = Program.GetPrintedList();
             
             Assert.Equal("Buzz", actual[4]);
             Assert.Equal("Buzz", actual[9]);
@@ -47,13 +47,17 @@ namespace fizzbuzz.tests
             Assert.Equal("Buzz", actual[24]);
             Assert.Equal("Buzz", actual[49]);
             Assert.Equal("Buzz", actual[99]);
+//            Assert.Equal("Buzz", actual[51]); -- what should be printed if a number is divisible by 3 and it has 5?
+            Assert.Equal("Buzz", actual[55]);
+            Assert.Equal("Buzz", actual[57]);
+            Assert.Equal("Buzz", actual[58]);
         }
         
         [Fact]
         public void ShouldReturnFizzBuzzIfTheNumberIsDivisibleByThreeAndFive()
         {
             var program = new Program();
-            var actual = program.GetPrintedList();
+            var actual = Program.GetPrintedList();
             
             Assert.Equal("FizzBuzz", actual[14]);
             Assert.Equal("FizzBuzz", actual[29]);

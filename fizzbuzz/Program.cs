@@ -6,8 +6,7 @@ namespace fizzbuzz
     {
         public static void Main(string[] args)
         {
-            var program = new Program();
-            var printedList = program.GetPrintedList();
+            var printedList = GetPrintedList();
 
             foreach (var i in printedList)
             {
@@ -15,7 +14,7 @@ namespace fizzbuzz
             }
         }
 
-        public List<string> GetPrintedList()
+        public static List<string> GetPrintedList()
         {
             var printedList = new List<string>();
 
@@ -31,7 +30,9 @@ namespace fizzbuzz
         {
             if (number % 3 == 0 && number % 5 == 0) return "FizzBuzz";
             if (number % 3 == 0 || number.ToString().Contains("3")) return "Fizz";
-            return number % 5 == 0 ? "Buzz" : number.ToString();
+            if (number % 5 == 0 || number.ToString().Contains("5")) return "Buzz";
+
+            return number.ToString();
         }
     }
 }

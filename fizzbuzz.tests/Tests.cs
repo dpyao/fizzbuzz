@@ -19,7 +19,7 @@ namespace fizzbuzz.tests
         }
 
         [Fact]
-        public void ShouldReturnFizzIfTheNumberIsDivisibleByThree()
+        public void ShouldReturnFizzIfTheNumberIsDivisibleByThreeOrItHasThree()
         {
             var program = new Program();
             var actual = program.GetPrintedList();
@@ -29,6 +29,10 @@ namespace fizzbuzz.tests
             Assert.Equal("Fizz", actual[8]);
             Assert.Equal("Fizz", actual[11]);
             Assert.Equal("Fizz", actual[17]);
+            Assert.Equal("Fizz", actual[12]);
+            Assert.Equal("Fizz", actual[22]);
+            Assert.Equal("Fizz", actual[32]);
+            Assert.Equal("Fizz", actual[42]);
         }
         
         [Fact]

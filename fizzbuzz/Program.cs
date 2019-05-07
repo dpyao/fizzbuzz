@@ -15,13 +15,13 @@ namespace fizzbuzz
             }
         }
 
-        public List<int> getPrintedList()
+        public List<string> getPrintedList()
         {
-            var printedList = new List<int>();
+            var printedList = new List<string>();
 
             for (var i = 1; i <= 100; i++)
             {
-                printedList.Add(i);
+                printedList.Add(i % 3 == 0 ? "Fizz" : i.ToString());
             }
             return printedList;
         }

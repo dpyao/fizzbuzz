@@ -7,7 +7,7 @@ namespace fizzbuzz
         public static void Main(string[] args)
         {
             var program = new Program();
-            var printedList = program.getPrintedList();
+            var printedList = program.GetPrintedList();
 
             foreach (var i in printedList)
             {
@@ -15,20 +15,22 @@ namespace fizzbuzz
             }
         }
 
-        public List<string> getPrintedList()
+        public List<string> GetPrintedList()
         {
             var printedList = new List<string>();
 
             for (var i = 1; i <= 100; i++)
             {
-                var printStr = i.ToString();
-
-                if (i % 3 == 0) printStr = "Fizz";
-                if (i % 5 == 0) printStr = "Buzz";
-
-                printedList.Add(printStr);
+                printedList.Add(GetPrintedStr(i));
             }
             return printedList;
+        }
+
+        private static string GetPrintedStr(int number)
+        {
+            if (number % 3 == 0 && number % 5 == 0) return "FizzBuzz";
+            if (number % 3 == 0) return "Fizz";
+            return number % 5 == 0 ? "Buzz" : number.ToString();
         }
     }
 }
